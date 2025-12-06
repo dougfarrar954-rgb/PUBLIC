@@ -44,7 +44,7 @@ def convert_poml_to_toon(input_path, output_path):
         }
 
         for tag, header in headers.items():
-            content = re.sub(f'<{tag}[^>]*>', f'\n{header}:', content)
+            content = re.sub(f'<{tag}[^>]*>', f'\n{header}: ', content)
             content = content.replace(f'</{tag}>', '')
 
         # 3. Tag to Label Mappings (inline keys)
@@ -61,6 +61,14 @@ def convert_poml_to_toon(input_path, output_path):
             'benefit': 'Benefit',
             'approach': 'Approach',
             'trigger_phrases': 'Trigger Phrases',
+            'blueprint': 'Blueprint',
+            'resources': 'Resources',
+            'tips': 'Tips',
+            'action': 'Action',
+            'integration': 'Integration',
+            'follow_up': 'Follow Up',
+            'collaboration_principle': 'Collaboration Principle',
+            'decision_tree': 'Decision Tree',
         }
 
         for tag, label in labels.items():
@@ -70,20 +78,27 @@ def convert_poml_to_toon(input_path, output_path):
         # 4. Directive Names
         # <directive name="Foo"> -> Foo:
         def directive_replacer(match):
-            return f"\n{match.group(1)}:"
+            return f"\n{match.group(1)}: "
         content = re.sub(r'<directive[^>]*name="([^"]*)"[^>]*>', directive_replacer, content)
         content = content.replace('</directive>', '')
+
+        # 4.5 IF Conditions (Decision Trees)
+        # <if condition="XYZ">Value</if> -> - If XYZ: Value
+        def if_replacer(match):
+            return f"\n- If {match.group(1)}: "
+        content = re.sub(r'<if[^>]*condition="([^"]*)"[^>]*>', if_replacer, content)
+        content = content.replace('</if>', '')
 
         # 5. Captions (Generic)
         # <cp caption="Foo"> -> Foo:
         def caption_replacer(match):
-            return f"\n{match.group(1)}:"
+            return f"\n{match.group(1)}: "
         content = re.sub(r'<[\w-]+[^>]*caption="([^"]*)"[^>]*>', caption_replacer, content)
 
         # 6. List Items and Rules
         # Maps <tag> to bullet point
         bullets = ['trait', 'rule', 'prompt', 'extract', 'interpret', 'assume', 'mirror', 
-                   'item', 'element', 'step', 'source', 'area', 'section', 'case']
+                   'item', 'element', 'step', 'source', 'area', 'section', 'case', 'trigger']
         
         for tag in bullets:
             content = re.sub(f'<{tag}[^>]*>', '\n- ', content)
@@ -110,6 +125,8 @@ def convert_poml_to_toon(input_path, output_path):
 
         # Join and Write
         final_output = "\n".join(clean_lines).strip()
+        # Decode HTML entities (e.g. &amp; -> &) for clean text output
+        final_output = final_output.replace('&amp;', '&')
         
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(final_output)
