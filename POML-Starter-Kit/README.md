@@ -53,4 +53,18 @@ If you don't have it, download and install valid [Visual Studio Code](https://co
 
 ---
 
+## 🔧 Utility: POML to TOON Converter
+
+This kit includes a Python utility (`poml_to_toon_converter.py`) to convert your structured `.poml` files into a flat text format (TOON) if you prefer that style or need strict legacy compatibility.
+
+**Usage:**
+1. Open a terminal in this folder.
+2. Run the command:
+   ```bash
+   python poml_to_toon_converter.py <input_file.poml> <output_file.txt>
+   ```
+   *Example:* `python poml_to_toon_converter.py template.poml template-converted.txt`
+
+---
+
 Happy building! 🚀
