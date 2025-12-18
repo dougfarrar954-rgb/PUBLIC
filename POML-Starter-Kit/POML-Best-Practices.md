@@ -24,6 +24,16 @@
 - Max 500 lines per POML file
 - No advanced React processing unless specified
 
+## Formatting Best Practices
+- **Strict Lists:** Always use newlines for list items. Avoid running multiple items into a single paragraph.
+  - *Why?* AI models often shrink lists into paragraphs.
+- *Fix:* Explicitly instruct: "ALWAYS put each item on its OWN NEW LINE."
+
+## Standard Protocols
+- **Artifact Creation:** For agents that generate long plans or strategies, ALWAYS include the `Artifact Creation Protocol` (see Style Guide). 
+  - *Proactive Offer:* Agent should ask to turn long content into a downloadable document.
+  - *Keywords:* "create a document", "save this", "artifact".
+
 ## Example Template (Copy-Paste Ready)
 <role>You are a Git workflow expert for solo developers.</role>
 <task>

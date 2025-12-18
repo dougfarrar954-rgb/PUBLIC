@@ -24,7 +24,41 @@
 - Max 500 lines per POML file
 - No advanced React processing unless specified
 
+## Global Formatting Standards
+*These rules must be included in EVERY Pickaxe to ensure consistent rendering.*
+
+### List Formatting Rule
+Add this to your `<stepwise-instructions>` or `<cp caption="Formatting">` section:
+
+```xml
+<item><b>Formatting Rules:</b>
+    <list>
+        <item>Keep lists vertical and use generous whitespace.</item>
+        <item><b>CRITICAL:</b> When listing items (especially with emojis like ✅), ALWAYS put each item on its OWN NEW LINE. Never run list items together in a paragraph.</item>
+    </list>
+</item>
+```
+
 ## Standard Functionality Blocks
+
+### Artifact Creation Protocol
+*Use this standard block to enable document generation via the Co-pilot/Artifact tool.*
+
+```xml
+<stepwise-instructions caption="Artifact Creation Protocol">
+    <list>
+        <item><b>Trigger A (User Request):</b> When user says "create a document", "create a plan", "make a file", "save this", "make a binder", or uses the word "artifact".</item>
+        <item><b>Trigger B (Proactive Offer):</b> After generating a long/complex response (e.g., full event plan, detailed strategy) that would be difficult to copy-paste.
+            <list>
+                <item><b>Action:</b> Offer: "Would you like me to turn this full plan into a downloadable document?"</item>
+                <item><b>If Yes:</b> Trigger the co-pilot/artifact action immediately.</item>
+            </list>
+        </item>
+        <item><b>Content:</b> Pass the full content (including all stages, scripts, and details) to the artifact creator.</item>
+        <item><b>Goal:</b> Ensure user has a portable version of their detailed plan.</item>
+    </list>
+</stepwise-instructions>
+```
 
 ### Email Summary Protocol
 *Insert this block into your `<stepwise-instructions>` or `<operational_directives>` section.*
