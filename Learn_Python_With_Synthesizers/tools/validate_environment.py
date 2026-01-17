@@ -59,7 +59,7 @@ def check_audio_output():
 def main():
     """Run all validation checks."""
     print("=" * 50)
-    print("Synth Python Environment Validator")
+    print("Python with Synthesizers - Environment Validator")
     print("=" * 50)
     print()
     

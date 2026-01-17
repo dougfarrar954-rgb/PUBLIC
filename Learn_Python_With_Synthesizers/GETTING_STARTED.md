@@ -1,6 +1,6 @@
-# Getting Started with Learn Synth Python
+# Getting Started with Learn Python with Synthesizers
 
-Welcome to **Learn Synth Python**! This guide will help you set up your environment and start your journey learning Python through audio synthesis.
+Welcome to **Learn Python with Synthesizers**! This guide will help you set up your environment and start your journey learning Python through audio synthesis.
 
 ## Prerequisites
 

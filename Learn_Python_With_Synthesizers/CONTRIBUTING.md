@@ -1,4 +1,4 @@
-# Contributing to Learn Synth Python
+# Contributing to Learn Python with Synthesizers
 
 Thank you for your interest in contributing to this project! This curriculum is designed to be a community-driven resource for learning Python through audio synthesis.
 

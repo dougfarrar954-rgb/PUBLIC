@@ -196,7 +196,7 @@ def run_preflight_checks():
 
 def main():
     """Main session initialization routine."""
-    print("🎹 Learn Synth Python - Session Initializer 🐍")
+    print("🎹 Learn Python with Synthesizers - Session Initializer 🐍")
     print()
     
     # 1. Pre-flight checks

@@ -1,4 +1,4 @@
- # Learn Synth Python
+ # Learn Python with Synthesizers
 
 > **A self-sufficient, self-guided course for learning Python through audio synthesis**
 
