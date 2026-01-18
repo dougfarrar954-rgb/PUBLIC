@@ -14,8 +14,8 @@ Welcome to **Learn Python with Synthesizers**! This guide will help you set up y
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/AI-Community-Shared/Learn_Synth_Python_Curriculum.git
-cd Learn_Synth_Python_Curriculum
+git clone https://github.com/AI-Community-Shared/Learn_Python_With_Synthesizers.git
+cd Learn_Python_With_Synthesizers
 ```
 
 ### Step 2: Create a Virtual Environment (Recommended)

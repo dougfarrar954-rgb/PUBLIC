@@ -13,7 +13,7 @@ You have an Antigravity project already set up with GitHub integration. This gui
 
 ### Current Structure (From Your Image)
 ```
-Learn_Synth_Python_Curriculum/
+Learn_Python_With_Synthesizers/
 ├── agent/
 ├── prompts/
 │   └── synth_tutor_system.md          ← Your system prompt
@@ -30,7 +30,7 @@ Learn_Synth_Python_Curriculum/
 
 ### Recommended New Structure (Post-Migration)
 ```
-Learn_Synth_Python_Curriculum/
+Learn_Python_With_Synthesizers/
 ├── agent/
 │   └── synth_tutor_system.md          ← AI tutor system prompt
 ├── curriculum/
@@ -416,7 +416,7 @@ Use Antigravity's **Agent Manager** to track:
 Your current structure is good. Enhance it:
 
 ```
-Learn_Synth_Python_Curriculum/ (GitHub root)
+Learn_Python_With_Synthesizers/ (GitHub root)
 ├── .gitignore                    (Exclude audio files, venv)
 ├── README.md                     (Main project intro)
 ├── GETTING_STARTED.md            (New: Quick start guide)
@@ -482,7 +482,7 @@ outputs/student_portfolio/
 ### Step 3: Push to GitHub
 
 ```bash
-cd Learn_Synth_Python_Curriculum/
+cd Learn_Python_With_Synthesizers/
 git add -A
 git commit -m "Add full curriculum with Module 13 bridge"
 git push origin main
@@ -718,4 +718,5 @@ Create this in Google Sheets for easy tracking:
 4. **Let me know** if you hit any snags—I can help troubleshoot
 
 You're ready to go! 🚀
+
 

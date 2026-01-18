@@ -32,7 +32,25 @@ Python can act as a powerful calculator, and you can store calculation results i
 
 ### Part A: Python as a Calculator
 
-Open a Python interactive shell or create a file called `calculator.py`:
+**How to run Python code** - Choose one method:
+
+**Method 1: Python Interactive Shell** (Quick experiments)
+1. Open your terminal/PowerShell
+2. Type `python` and press Enter
+3. You'll see `>>>` - now you can type Python code
+4. Type `exit()` when done
+
+**Method 2: Create a Python File** (Save your work)
+1. Navigate to your workspace: `cd outputs\your_name`
+2. Create file in VS Code, or use: `New-Item calculator.py -ItemType File`
+3. Write Python code in the file
+4. Run with: `python calculator.py`
+5. **Important**: Use `print()` to see output in files!
+
+---
+
+**Try these examples:**
+
 
 ```python
 # Basic math

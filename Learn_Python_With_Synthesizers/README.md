@@ -23,8 +23,8 @@ This repository is a **complete Python learning curriculum** that teaches progra
 
 ```bash
 # Clone the repository
-git clone https://github.com/AI-Community-Shared/Learn_Synth_Python_Curriculum.git
-cd Learn_Synth_Python_Curriculum
+git clone https://github.com/AI-Community-Shared/Learn_Python_With_Synthesizers.git
+cd Learn_Python_With_Synthesizers
 
 # Create virtual environment (Optional but recommended)
 python -m venv venv
@@ -101,7 +101,7 @@ You can also follow the curriculum independently:
 ## Repository Structure
 
 ```
-Learn_Synth_Python_Curriculum/
+Learn_Python_With_Synthesizers/
 ├── curriculum/              # All lesson files and module content
 │   ├── MODULE_01_Foundations/
 │   ├── MODULE_02_Waveforms/

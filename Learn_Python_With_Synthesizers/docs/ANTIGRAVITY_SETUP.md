@@ -9,8 +9,8 @@
 
 ### Step 1: Clone and Navigate
 ```bash
-git clone https://github.com/AI-Community-Shared/Learn_Synth_Python_Curriculum.git
-cd Learn_Synth_Python_Curriculum
+git clone https://github.com/AI-Community-Shared/Learn_Python_With_Synthesizers.git
+cd Learn_Python_With_Synthesizers
 ```
 
 ### Step 2: Run the Session Initializer
