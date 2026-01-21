@@ -5,10 +5,12 @@
   "modules": {
     "module_00": {
       "name": "Python Foundations",
-      "status": "not_started",
-      "lessons_completed": [],
+      "status": "in_progress",
+      "lessons_completed": [
+        "0.1"
+      ],
       "checkpoint_passed": false,
-      "notes": ""
+      "notes": "Completed variables, print, and basic math. Created my_calculator.py successfully."
     },
     "module_01": {
       "name": "Foundations",
