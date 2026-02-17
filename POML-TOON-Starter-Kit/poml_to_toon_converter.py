@@ -44,7 +44,7 @@ def convert_poml_to_toon(input_path, output_path):
         }
 
         for tag, header in headers.items():
-            content = re.sub(f'<{tag}[^>]*>', f'\n{header}: ', content)
+            content = re.sub(f'<{tag}[^>]*>', f'{header}: ', content)
             content = content.replace(f'</{tag}>', '')
 
         # 3. Tag to Label Mappings (inline keys)
@@ -72,27 +72,27 @@ def convert_poml_to_toon(input_path, output_path):
         }
 
         for tag, label in labels.items():
-            content = re.sub(f'<{tag}[^>]*>', f'\n{label}: ', content)
+            content = re.sub(f'<{tag}[^>]*>', f'{label}: ', content)
             content = content.replace(f'</{tag}>', '')
 
         # 4. Directive Names
         # <directive name="Foo"> -> Foo:
         def directive_replacer(match):
-            return f"\n{match.group(1)}: "
+            return f"{match.group(1)}: "
         content = re.sub(r'<directive[^>]*name="([^"]*)"[^>]*>', directive_replacer, content)
         content = content.replace('</directive>', '')
 
         # 4.5 IF Conditions (Decision Trees)
         # <if condition="XYZ">Value</if> -> - If XYZ: Value
         def if_replacer(match):
-            return f"\n- If {match.group(1)}: "
+            return f"- If {match.group(1)}: "
         content = re.sub(r'<if[^>]*condition="([^"]*)"[^>]*>', if_replacer, content)
         content = content.replace('</if>', '')
 
         # 5. Captions (Generic)
         # <cp caption="Foo"> -> Foo:
         def caption_replacer(match):
-            return f"\n{match.group(1)}: "
+            return f"{match.group(1)}: "
         content = re.sub(r'<[\w-]+[^>]*caption="([^"]*)"[^>]*>', caption_replacer, content)
 
         # 6. List Items and Rules
@@ -101,7 +101,7 @@ def convert_poml_to_toon(input_path, output_path):
                    'item', 'element', 'step', 'source', 'area', 'section', 'case', 'trigger']
         
         for tag in bullets:
-            content = re.sub(f'<{tag}[^>]*>', '\n- ', content)
+            content = re.sub(f'<{tag}[^>]*>', '- ', content)
             content = content.replace(f'</{tag}>', '')
 
         # 7. Generic Strip of unknown tags (HTML/XML) but keep content
@@ -113,12 +113,12 @@ def convert_poml_to_toon(input_path, output_path):
         for line in lines:
             stripped = line.strip()
             if not stripped:
+                # Keep intended blank lines but don't add extras
+                if clean_lines and clean_lines[-1] != "":
+                    clean_lines.append("")
                 continue
-            
-            # Re-apply indentation for structure
-            if stripped.endswith(':'):
-                clean_lines.append(f"\n{stripped}") # Extra newline before headers
-            elif stripped.startswith('- '):
+
+            if stripped.startswith('- '):
                 clean_lines.append(f"  {stripped}")
             else:
                 clean_lines.append(stripped)
